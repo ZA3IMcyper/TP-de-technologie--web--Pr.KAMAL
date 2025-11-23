@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 2 - Jeu du nombre mystère</title>
+</head>
+<body>
+
+    <h2>Exercice 2 : Jeu du nombre mystère</h2>
+    <button onclick="jouer()">Commencer le jeu</button>
+
+    <script>
+        function jouer() {
+            let nombreMystere = Math.floor(Math.random() * 10) + 1; // 1 à 10
+            let tentative = 0;
+            let proposition;
+
+            do {
+                proposition = parseInt(prompt("Devinez le nombre (entre 1 et 10) :"));
+                tentative++;
+
+                if (proposition > nombreMystere) {
+                    alert("Trop grand !");
+                } else if (proposition < nombreMystere) {
+                    alert("Trop petit !");
+                }
+
+            } while (proposition !== nombreMystere);
+
+            alert("Bravo ! Vous avez trouvé le nombre " + nombreMystere +
+                  " en " + tentative + " tentative(s).");
+            console.log("Nombre mystère : " + nombreMystere);
+            console.log("Nombre de tentatives : " + tentative);
+        }
+    </script>
+
+</body>
+</html>

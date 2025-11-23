@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 1 - Calculatrice JavaScript</title>
+</head>
+<body>
+
+    <h2>Exercice 1 : Calculatrice JavaScript</h2>
+    <button onclick="calculer()">Démarrer le calcul</button>
+
+    <script>
+        function calculer() {
+            // Demander deux nombres
+            let nombre1 = parseFloat(prompt("Entrez le premier nombre :"));
+            let nombre2 = parseFloat(prompt("Entrez le deuxième nombre :"));
+
+            // Calculs
+            let somme = nombre1 + nombre2;
+            let difference = nombre1 - nombre2;
+            let produit = nombre1 * nombre2;
+            let quotient = nombre1 / nombre2;
+
+            // Affichage dans la console
+            console.log("Somme : " + somme);
+            console.log("Différence : " + difference);
+            console.log("Produit : " + produit);
+            console.log("Quotient : " + quotient);
+
+            alert("✔ Résultats affichés dans la console (F12)");
+        }
+    </script>
+
+</body>
+</html>

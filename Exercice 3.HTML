@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 3 - Quiz interactif</title>
+</head>
+<body>
+
+<h2>Exercice 3 : Quiz Interactif</h2>
+<button onclick="lancerQuiz()">Démarrer le Quiz</button>
+
+<script>
+    // Tableau des questions et réponses
+    const QUESTIONS = [
+        ["Quelle est la capitale de la France ?", "Paris"],
+        ["Combien font 5 + 7 ?", "12"],
+        ["Quel est le plus grand océan du monde ?", "Pacifique"],
+        ["En quelle année l'homme a-t-il marché sur la Lune ?", "1969"],
+        ["Quel est le langage de programmation utilisé pour ce quiz ?", "JavaScript"]
+    ];
+
+    function lancerQuiz() {
+        let reponsesCorrectes = 0;
+        let totalQuestions = QUESTIONS.length;
+
+        for (let i = 0; i < totalQuestions; i++) {
+            let question = QUESTIONS[i][0];
+            let reponseCorrecte = QUESTIONS[i][1];
+
+            let reponseUtilisateur = prompt("Question " + (i+1) + "/" + totalQuestions + " :\n" + question);
+
+            if (reponseUtilisateur === null) {
+                alert("Quiz annulé !");
+                console.log("Quiz annulé à la question " + (i+1));
+                return;
+            }
+
+            reponseUtilisateur = reponseUtilisateur.trim();
+
+            if (reponseUtilisateur.toLowerCase() === reponseCorrecte.toLowerCase()) {
+                alert("✅ Réponse juste !");
+                console.log("Question " + (i+1) + " : ✅ Réponse juste");
+                reponsesCorrectes++;
+            } else {
+                alert("❌ Réponse fausse ! La bonne réponse était : " + reponseCorrecte);
+                console.log("Question " + (i+1) + " : ❌ Réponse fausse (Votre réponse : " + reponseUtilisateur + ")");
+            }
+        }
+
+        let messageResultat = "Vous avez répondu correctement à " + reponsesCorrectes + " questions sur " + totalQuestions;
+        let pourcentage = Math.round((reponsesCorrectes / totalQuestions) * 100);
+        alert("🎯 Quiz terminé !\n" + messageResultat + "\nScore : " + pourcentage + "%");
+        console.log("Quiz terminé : " + messageResultat + " | Score : " + pourcentage + "%");
+    }
+</script>
+
+</body>
+</html>
