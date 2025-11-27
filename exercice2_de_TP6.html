@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+        }
+        #taskForm {
+            margin-bottom: 20px;
+        }
+        #taskInput {
+            padding: 8px;
+            width: 70%;
+        }
+        #addBtn {
+            padding: 8px 15px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        button {
+            margin-left: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Nouvelle tâche" required>
+        <button type="submit" id="addBtn">Ajouter</button>
+    </form>
+    <ul id="taskList"></ul>
+
+    <script>
+        const form = document.getElementById('taskForm');
+        const taskInput = document.getElementById('taskInput');
+        const taskList = document.getElementById('taskList');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const li = document.createElement('li');
+            const span = document.createElement('span');
+            span.textContent = taskInput.value;
+            
+            const completeBtn = document.createElement('button');
+            completeBtn.textContent = 'Terminer';
+            completeBtn.addEventListener('click', function() {
+                span.classList.toggle('completed');
+            });
+            
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Supprimer';
+            deleteBtn.addEventListener('click', function() {
+                taskList.removeChild(li);
+            });
+            
+            const btnContainer = document.createElement('div');
+            btnContainer.appendChild(completeBtn);
+            btnContainer.appendChild(deleteBtn);
+            
+            li.appendChild(span);
+            li.appendChild(btnContainer);
+            taskList.appendChild(li);
+            
+            taskInput.value = '';
+        });
+    </script>
+</body>
+</html>

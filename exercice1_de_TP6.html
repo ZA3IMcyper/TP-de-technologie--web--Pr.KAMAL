@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1</title>
+</head>
+<body>
+    <script>
+        const div = document.createElement('div');
+        const p = document.createElement('p');
+        
+        p.textContent = 'Ceci est un paragraphe';
+        div.appendChild(p);
+        document.body.appendChild(div);
+        
+        p.textContent = 'Le texte a été modifié';
+        
+        p.style.backgroundColor = 'lightblue';
+        p.style.textAlign = 'center';
+        
+        div.addEventListener('click', function() {
+            p.textContent = 'Un clic a été détecté';
+        });
+    </script>
+</body>
+</html>
