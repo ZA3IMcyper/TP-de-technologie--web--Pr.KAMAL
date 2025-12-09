@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire</title>
+</head>
+<body>
+
+  <h2>Formulaire</h2>
+
+  <form action="traitement.php" method="post">
+    <!-- Champ de texte -->
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
+    <br><br>
+    <!-- Prénom -->
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom" required>
+    <br><br>
+    <!-- Champ e-mail -->
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+    <!-- Liste de la filière -->
+    <label for="filiere">Filière :</label>
+    <select id="filiere" name="filiere">
+      <option value="cybersecurite">Cyber Sécurité</option>
+      <option value="iail (tc ia)">IAIL (TC IA)</option>
+      <option value="cavsn(tc pc)">CAVSN(TC PC)</option>
+      <option value="im(tc mi)">IM(TC MI)</option>
+    </select>
+    <br><br>
+
+    
+    <!-- Zone de texte -->
+    <label for="message">Message :</label><br>
+    <textarea id="message" name="message" rows="5" cols="30"></textarea>
+    <br><br>
+
+    
+
+   
+
+    <!-- Case à cocher -->
+    <input type="checkbox" id="conditions" name="conditions" required>
+    <label for="conditions">J’accepte les conditions</label>
+    <br><br>
+
+    <!-- Bouton d’envoi -->
+    <input type="submit" value="Envoyer">
+    <input type="reset" value="Effacer">
+  </form>
+
+</body>
+</html>
