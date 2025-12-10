@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TP - Formulaire PHP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>TP — Formulaire en PHP</h1>
+    <p>Complétez le formulaire puis cliquez sur <strong>Envoyer</strong>.</p>
+
+    <form action="response.php" method="POST" novalidate>
+      <fieldset>
+        <legend>Informations personnelles</legend>
+
+        <label for="nom">Nom *</label>
+        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom">
+
+        <label for="annee">Année de naissance</label>
+        <input type="number" id="annee" name="annee" min="1900" max="2025" placeholder="YYYY">
+
+        <label for="identifiant">Identifiant (ex : n°)</label>
+        <input type="text" id="identifiant" name="identifiant" placeholder="Donnez un identifiant">
+
+        <p>Sexe :</p>
+        <label><input type="radio" name="sexe" value="Masculin" checked> Masculin</label>
+        <label><input type="radio" name="sexe" value="Féminin"> Féminin</label>
+
+        <p><label><input type="checkbox" name="debutant" value="oui"> Je débute en PHP</label></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Compte</legend>
+        <label for="mdp">Mot de passe</label>
+        <input type="password" id="mdp" name="mdp" placeholder="Mot de passe">
+
+        <label for="bio">Une petite bio</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Quelque chose sur vous..."></textarea>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit">Envoyer</button>
+        <button type="reset">Réinitialiser</button>
+      </div>
+    </form>
+
+    <p class="note">Remarque : les champs marqués * sont requis côté navigateur (HTML). Le serveur vérifie aussi (PHP).</p>
+  </main>
+</body>
+</html>
